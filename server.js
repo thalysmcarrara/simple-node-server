@@ -9,7 +9,10 @@ app.use(express.urlencoded({ extended: true }));
 // Rota que aceita GET e POST
 app.all("/", (req, res) => {
   console.log("Request Headers:", req.headers);
-  res.send("Check your console for the request headers.");
+  return res.json({
+    message: "Check your console for the request headers.",
+    headers: JSON.stringify(req.headers),
+  });
 });
 
 app.listen(port, () => {
