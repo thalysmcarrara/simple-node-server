@@ -11,7 +11,7 @@ app.all("/", (req, res) => {
   console.log("Request Headers:", req.headers);
   return res.json({
     message: "Check your console for the request headers.",
-    headers: JSON.stringify(req.headers),
+    headers: req.headers,
   });
 });
 
